@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <string.h>
+
+int indexOf(const char text[], const char word[]) {
+    int textLen = strlen(text);
+    int wordLen = strlen(word);
+
+    if (wordLen == 0) {
+        return 0;
+    }
+
+    if (wordLen > textLen) {
+        return -1;
+    }
+
+    for (int i = 0; i <= (textLen - wordLen); i++) {
+        int j;
+        for (j = 0; j < wordLen; j++) {
+            if (text[i + j] != word[j]) {
+                break;
+            }
+        }
+
+        if (j == wordLen) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+int main() {
+    char text[] = "This is a sentence with the word cat in it.";
+    char word[] = "cat";
+    int index = indexOf(text, word);
+
+    if (index != -1) {
+        printf("The word '%s' was found at index: %d\n", word, index);
+    } else {
+        printf("The word '%s' was not found in the text.\n", word);
+    }
+
+    return 0;
+}
+
