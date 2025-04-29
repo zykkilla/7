@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+
+int max(int a, int b) {
+    a = 11;
+    b = 41;
+
+    if (a > b) {
+        printf("Максимальное число: %d\n", a);
+        return a;
+    } else {
+        printf("Максимальное число: %d\n", b);
+        return b;
+    }
+}
+// добавляем мейн только для запуска программы
+int main() {
+  max(0, 0);
+  return 0;
+}
+
